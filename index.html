@@ -779,6 +779,7 @@
             <button class="tab-btn active" onclick="switchTab('physics')">📚 Physics</button>
             <button class="tab-btn" onclick="switchTab('chemistry')">⚗️ Chemistry</button>
             <button class="tab-btn" onclick="switchTab('maths')">🔢 Mathematics</button>
+            <button class="tab-btn" onclick="switchTab('pyq')">📜 PYQ Mode</button>
             <button class="tab-btn" onclick="switchTab('revision')">🔄 Revision Hub</button>
             <button class="tab-btn" onclick="switchTab('formulas')">📐 Formula War</button>
             <button class="tab-btn" onclick="switchTab('dashboard')">📊 Dashboard</button>
@@ -827,6 +828,44 @@
                         <span id="flashcardCounter">1 / 50</span>
                     </div>
                 </div>
+
+                <!-- PYQ Mode Tab -->
+<div id="pyq" class="tab-content">
+    <div class="revision-section">
+        <h2 style="color: var(--primary); margin-bottom: 20px;">
+            📜 PYQ Mode (1979–2025)
+        </h2>
+
+        <!-- PYQ Filters -->
+        <div class="difficulty-selector">
+            <select id="pyqYear" class="timer-input" onchange="filterPYQ()">
+                <option value="all">All Years</option>
+            </select>
+
+            <select id="pyqSubject" class="timer-input" onchange="filterPYQ()">
+                <option value="all">All Subjects</option>
+                <option value="Physics">Physics</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="Maths">Maths</option>
+            </select>
+
+            <select id="pyqChapter" class="timer-input" onchange="filterPYQ()">
+                <option value="all">All Chapters</option>
+            </select>
+        </div>
+
+        <!-- PYQ Question Display -->
+        <div id="pyqContainer"></div>
+
+        <!-- Mixed PYQ Test -->
+        <div class="response-buttons">
+            <button class="btn btn-primary" onclick="startMixedPYQ()">
+                🎯 Start Mixed PYQ Test
+            </button>
+        </div>
+    </div>
+</div>
+
 
                 <!-- MCQ Mode -->
                 <div id="mcq" class="revision-mode">
